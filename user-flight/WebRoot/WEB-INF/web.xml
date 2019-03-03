@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <!-- 配置登录 -->
+  <servlet>
+  <servlet-name>LoginAction</servlet-name>
+  <servlet-class>com.servlet.LoginAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>LoginAction</servlet-name>
+  <url-pattern>/public/login</url-pattern>
+  </servlet-mapping>
+  <!-- 配置注册 -->
+  <servlet>
+  <servlet-name>RegistAction</servlet-name>
+  <servlet-class>com.servlet.RegistAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>RegistAction</servlet-name>
+  <url-pattern>/public/regist</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 配置编解码的过滤器 -->
+  <filter>
+  <filter-name>CharacterEncodingFilter</filter-name>
+  <filter-class>com.filter.CharacterEncodingFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>CharacterEncodingFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  
+   <!-- 配置session的过滤器 -->
+  <filter>
+  <filter-name>CheckSessionFilter</filter-name>
+  <filter-class>com.filter.CheckSessionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  <filter-name>CheckSessionFilter</filter-name>
+  <url-pattern>/private/*</url-pattern>
+  </filter-mapping>
+  
+    <!-- 配置展示 -->
+  <servlet>
+  <servlet-name>FlightShowAllAction</servlet-name>
+  <servlet-class>com.servlet.FlightShowAllAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>FlightShowAllAction</servlet-name>
+  <url-pattern>/private/showall</url-pattern>
+  </servlet-mapping>
+  
+   <!-- 配置增加 -->
+  <servlet>
+  <servlet-name>FlightAddAction</servlet-name>
+  <servlet-class>com.servlet.FlightAddAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>FlightAddAction</servlet-name>
+  <url-pattern>/private/add</url-pattern>
+  </servlet-mapping>
+  
+   <!-- 配置修改 -->
+  <servlet>
+  <servlet-name>FlightUpdateAction</servlet-name>
+  <servlet-class>com.servlet.FlightUpdateAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>FlightUpdateAction</servlet-name>
+  <url-pattern>/private/update</url-pattern>
+  </servlet-mapping>
+  
+   <!-- 配置删除 -->
+  <servlet>
+  <servlet-name>FlightDeleteAction</servlet-name>
+  <servlet-class>com.servlet.FlightDeleteAction</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  <servlet-name>FlightDeleteAction</servlet-name>
+  <url-pattern>/private/delete</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+</web-app>
